@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Beautiful Paradise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="paradiseCanvas"></canvas>
+    <div id="message">Kung mamatay man ako, sana sa magandang paraiso.</div>
+
+    <script>
+        const canvas = document.getElementById("paradiseCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Draw sky
+        ctx.fillStyle = "lightblue";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw grass
+        ctx.fillStyle = "green";
+        ctx.fillRect(0, canvas.height - 200, canvas.width, 200);
+
+        // Draw the sun
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, 100, 50, 0, Math.PI * 2);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+        ctx.closePath();
+
+        // Draw the tree trunk
+        ctx.fillStyle = "brown";
+        ctx.fillRect(canvas.width / 2 - 20, canvas.height - 300, 40, 100);
+
+        // Draw the tree leaves
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2 - 40, canvas.height - 300, 50, 0, Math.PI * 2);
+        ctx.arc(canvas.width / 2 + 40, canvas.height - 300, 50, 0, Math.PI * 2);
+        ctx.arc(canvas.width / 2, canvas.height - 350, 50, 0, Math.PI * 2);
+        ctx.fillStyle = "darkgreen";
+        ctx.fill();
+        ctx.closePath();
+    </script>
+</body>
+</html>
